@@ -26,8 +26,6 @@ import numpy as np
 
 # Aranim imports
 from .Renderer import Renderer
-from aranim.artobjects.camera import Camera
-from aranim.artobjects.ARTPoint import ARTPoint
 
 
 # Rendering with Cairo
@@ -66,26 +64,9 @@ class CairoRenderer(Renderer):
 
         # Initialize context
         self._context = cairo.Context(self._surface)
-
-        # Properties
-        self._cameras = list()
     # end __init__
 
     # endregion CONSTRUCTORS
-
-    # region PUBLIC
-
-    # Add a camera to the renderer
-    def add(self, cam: Camera, pos: ARTPoint) -> None:
-        """
-        Add a camera to the renderer
-        :param cam: The camera to be added
-        :param pos: The position of the camera on the screen
-        """
-        self._cameras.append((cam, pos))
-    # end add
-
-    # endregion PUBLIC
 
     # region OVERRIDE
 

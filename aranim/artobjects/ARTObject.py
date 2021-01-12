@@ -21,12 +21,13 @@
 # University of Geneva <nils.schaetti@unige.ch>
 
 # Imports
+from aranim import ARTParamObject
 from .ARTPoint import ARTPoint
 from .ARTPoints import ARTPoints
 
 
 # Base Artanim object
-class ARTObject(object):
+class ARTObject(ARTParamObject):
     """
     Base Artanim object
     """
@@ -34,11 +35,14 @@ class ARTObject(object):
     # region CONSTRUCTORS
 
     # Constructor
-    def __init__(self, center: ARTPoint, points: ARTPoints = None):
+    def __init__(self, center: ARTPoint, points: ARTPoints = None, **kwargs):
         """
         Constructor
         :param center: Center point
         """
+        # Super call
+        super(ARTObject, self).__init__(**kwargs)
+
         # Properties
         self._center = center
 

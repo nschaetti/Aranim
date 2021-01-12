@@ -21,11 +21,24 @@
 # University of Geneva <nils.schaetti@unige.ch>
 
 # Imports
+import numpy as np
 import aranim
 import aranim.rendering
+from aranim.artobjects.camera import Camera
+from aranim.artobjects import ARTPoint, ARTSize
+from aranim.scenes import Scene
+import aranim.artobjects.geometry as argeo
 
 # Create a renderer with Cairo
-renderer = aranim.rendering.CairoRenderer()
+renderer = aranim.rendering.CairoRenderer(resolution=(800, 600), fps=60)
+
+# A new scene
+main_scene = Scene("main")
 
 # Add a camera on the whole screen
+main_scene.camera = Camera(ARTPoint(np.array([0, 0])), ARTSize(np.array([8, 6])))
+
+# Add a rectangle
+main_scene.add_object(argeo.Rectangle())
+
 

@@ -25,6 +25,8 @@ import numpy as np
 
 # Aranim imports
 from .. import ARTParamObject
+from aranim.artobjects.camera import Camera
+from aranim.artobjects.ARTPoint import ARTPoint
 
 
 # Renderer base class
@@ -35,7 +37,34 @@ class Renderer(ARTParamObject):
 
     # region CONSTRUCTORS
 
+    # Constructor
+    def __init__(self, **kwargs):
+        """
+        Constructor
+        :param kwargs: Arguments
+        """
+        # Super
+        super(Renderer, self).__init__(**kwargs)
+
+        # List of cameras
+        self._cameras = list()
+    # end __init__
+
     # endregion CONSTRUCTORS
+
+    # region PUBLIC
+
+    # Add a camera to the renderer
+    def add_camera(self, cam: Camera, pos: ARTPoint) -> None:
+        """
+        Add a camera to the renderer
+        :param cam: The camera to be added
+        :param pos: The position of the camera on the screen
+        """
+        self._cameras.append((cam, pos))
+    # end add_camera
+
+    # endregion PUBLIC
 
     # region TO_IMPLEMENT
 
