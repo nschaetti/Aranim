@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# File : aranim/__init__.py
-# Description : Aranim main init file
+# File : aranim/artobjects/camera/Camera.py
+# Description :
 # Date : 12th of January, 2021
 #
 # This file is part of Aranim.  Aranim is free software: you can
@@ -21,7 +21,33 @@
 # University of Geneva <nils.schaetti@unige.ch>
 
 # Imports
-from .ARTParamObject import ARTParamObject
 
-# ALL
-__all__ = ['ARTParamObject']
+
+# Aranim imports
+from .. import ARTObject, ARTPoint, ARTSize
+
+# Camera object
+class Camera(ARTObject):
+    """
+    A Camera object
+    """
+
+    # region CONSTRUCTORS
+
+    # Constructor
+    def __init__(self, center: ARTPoint = None, size: ARTSize = None):
+        """
+        Constructor
+        :param center: Center position
+        :param size: Size (width, height)
+        """
+        # Super
+        super(Camera, self).__init__(center)
+
+        # Properties
+        self._size = size
+    # end __init__
+
+    # endregion CONSTRUCTORS
+
+# end Camera

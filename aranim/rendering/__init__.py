@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# File : aranim/__init__.py
-# Description : Aranim main init file
+# File : aranim/rendering/__init__.py
+# Description : Rendering subpackage init file
 # Date : 12th of January, 2021
 #
 # This file is part of Aranim.  Aranim is free software: you can
@@ -21,7 +21,8 @@
 # University of Geneva <nils.schaetti@unige.ch>
 
 # Imports
-from .ARTParamObject import ARTParamObject
+from .CairoRenderer import CairoRenderer
+from .Renderer import Renderer
 
 # ALL
-__all__ = ['ARTParamObject']
+__all__ = ['CairoRenderer', 'Renderer']

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# File : aranim/__init__.py
-# Description : Aranim main init file
+# File : aranim/artobjects/camera/Camera.py
+# Description :
 # Date : 12th of January, 2021
 #
 # This file is part of Aranim.  Aranim is free software: you can
@@ -21,7 +21,11 @@
 # University of Geneva <nils.schaetti@unige.ch>
 
 # Imports
-from .ARTParamObject import ARTParamObject
+import aranim
+import aranim.rendering
 
-# ALL
-__all__ = ['ARTParamObject']
+# Create a renderer with Cairo
+renderer = aranim.rendering.CairoRenderer()
+
+# Add a camera on the whole screen
+

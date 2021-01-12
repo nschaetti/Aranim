@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# File : aranim/__init__.py
-# Description : Aranim main init file
+# File : aranim/artobjects/geometry/Rectangle.py
+# Description : Simple rectangle object
 # Date : 12th of January, 2021
 #
 # This file is part of Aranim.  Aranim is free software: you can
@@ -21,7 +21,30 @@
 # University of Geneva <nils.schaetti@unige.ch>
 
 # Imports
-from .ARTParamObject import ARTParamObject
+from .. import ARTObject
 
-# ALL
-__all__ = ['ARTParamObject']
+# Rectangle object
+class Rectangle(ARTObject):
+    """
+    Rectangle object
+    """
+
+    # region CONSTRUCTORS
+
+    # Constructor
+    def __init__(self, center, size):
+        """
+        Constructor
+        :param center: Center point (ARTPoint)
+        :param size: Rectangle size (ARTSize)
+        """
+        # Super
+        super(Rectangle, self).__init__(center)
+
+        # Properties
+        self._size = size
+    # end __init__
+
+    # endregion CONSTRUCTORS
+
+# end Rectangle

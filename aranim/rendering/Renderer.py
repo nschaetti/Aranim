@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# File : aranim/__init__.py
-# Description : Aranim main init file
+# File : aranim/rendering/Renderer.py
+# Description : Base renderer object
 # Date : 12th of January, 2021
 #
 # This file is part of Aranim.  Aranim is free software: you can
@@ -21,7 +21,34 @@
 # University of Geneva <nils.schaetti@unige.ch>
 
 # Imports
-from .ARTParamObject import ARTParamObject
+import numpy as np
 
-# ALL
-__all__ = ['ARTParamObject']
+# Aranim imports
+from .. import ARTParamObject
+
+
+# Renderer base class
+class Renderer(ARTParamObject):
+    """
+    Renderer base class
+    """
+
+    # region CONSTRUCTORS
+
+    # endregion CONSTRUCTORS
+
+    # region TO_IMPLEMENT
+
+    # Render the animation at time t
+    def render(self, t: int=0.0) -> np.array:
+        """
+        Render the animation at time t
+        :param t: Time position
+        :return: Image an a numpy array
+        """
+        raise Exception("render method must be implemented")
+    # end render
+
+    # endregion TO_IMPLEMENT
+
+# end Renderer

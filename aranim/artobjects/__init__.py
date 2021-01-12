@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# File : aranim/__init__.py
-# Description : Aranim main init file
+# File : aranim/artobjects/__init__.py
+# Description : artobjects subpackage init file
 # Date : 12th of January, 2021
 #
 # This file is part of Aranim.  Aranim is free software: you can
@@ -21,7 +21,9 @@
 # University of Geneva <nils.schaetti@unige.ch>
 
 # Imports
-from .ARTParamObject import ARTParamObject
+from .ARTObject import ARTObject
+from .ARTPoint import ARTPoint, ARTSize
+from .ARTPoints import ARTPoints
 
 # ALL
-__all__ = ['ARTParamObject']
+__all__ = ['ARTObject', 'ARTPoint', 'ARTPoints', 'ARTSize']

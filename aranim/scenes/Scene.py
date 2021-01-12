@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# File : aranim/__init__.py
-# Description : Aranim main init file
+# File : aranim/scenes/Scene.py
+# Description : Base scene
 # Date : 12th of January, 2021
 #
 # This file is part of Aranim.  Aranim is free software: you can
@@ -21,7 +21,40 @@
 # University of Geneva <nils.schaetti@unige.ch>
 
 # Imports
-from .ARTParamObject import ARTParamObject
 
-# ALL
-__all__ = ['ARTParamObject']
+
+# Base scene
+class Scene(object):
+    """
+    Base scene
+    """
+
+    # region CONSTRUCTORS
+
+    # Constructor
+    def __init__(self, name):
+        """
+        Constructor
+        :param name: Scene name
+        """
+        # Properties
+        self._name = name
+        self._objects = list()
+    # end __init__
+
+    # endregion CONSTRUCTORS
+
+    # region PUBLIC
+
+    # Add an object to the scene
+    def add(self, o):
+        """
+        Add an object to the scene
+        :param o: Object to be added
+        """
+        self._objects.append(o)
+    # end add
+
+    # endregion PUBLIC
+
+# end Scene
